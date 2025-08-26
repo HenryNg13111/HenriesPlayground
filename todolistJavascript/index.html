@@ -12,7 +12,40 @@
 	<div id="todoList">
 		<button id="todoButton">Add Todo</button>
 	</div>
-	<script src="index.js"></script>
+	<script>
+		const todoList = document.getElementById('todoList')
+
+		const todoButton = document.getElementById('todoButton')
+		todoButton.addEventListener('click',()=>{
+
+			const inputTodo = document.createElement('input')
+			const checkTodo = document.createElement('input')
+			const buttonTodo = document.createElement('button')
+			const divTodo = document.createElement('div')
+
+			checkTodo.type = 'checkbox'
+			checkTodo.addEventListener('click',()=>{
+				if(checkTodo.checked){
+					inputTodo.disabled = true
+				}else{
+					inputTodo.disabled = false
+				}
+			})
+
+			buttonTodo.innerHTML = 'Erase'
+			buttonTodo.addEventListener('click',()=>{
+				divTodo.remove()
+			})
+
+			divTodo.style.display = 'flexbox'
+			divTodo.appendChild(inputTodo)
+			divTodo.appendChild(checkTodo)
+			divTodo.appendChild(buttonTodo)
+
+			todoList.appendChild(divTodo)
+		})
+
+	</script>
 </body>
 
 </html>
