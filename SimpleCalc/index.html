@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+
+<body>
+    <div style="
+        display: grid;
+        border: 1px solid black;
+        border-radius: 1rem;
+        margin: auto;
+        width: 28rem;
+        padding: 2rem;
+        ">
+        <div style="
+            margin: 2rem;
+            border: 1px solid black;
+            display: inline;
+        ">
+            <div style="
+                font-size: 14px;
+                height: 16px;
+                text-align: end;
+                padding-right: 0.5rem;
+                padding-top: 2px;
+            " id="topResult">
+
+            </div>
+            <div style="
+                display: flex;
+            ">
+                <div style="
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-bottom: 1rem;
+            font-size: 2rem;
+            " id="result">
+                    0
+                </div>
+                <div style="
+                margin-top: 14px;
+                margin-bottom: 21px;
+                margin-right: 0.5rem;
+                margin-left: auto;
+                font-size: 1.5rem;
+            " id="eraseButton">
+                    ««
+                </div>
+            </div>
+        </div>
+        <div style="
+            display: grid;
+            grid-template-columns: 7rem 7rem 7rem 7rem;
+        ">
+            <button style="
+            width: 6rem;
+            height: 6rem;
+            font-size: 3rem;
+            text-align: center;
+            align-content: center;
+            margin: 0.5rem;
+            border: 0.5px solid black;
+            border-radius: 0.5rem;
+            " id="oneButton">1</button>
+
+            <button style="
+            width: 6rem;
+            height: 6rem;
+            font-size: 3rem;
+            text-align: center;
+            align-content: center;
+            margin: 0.5rem;
+            border: 0.5px solid black;
+            border-radius: 0.5rem;
+            " id="twoButton">2</button>
+
+            <button style="
+            width: 6rem;
+            height: 6rem;
+            font-size: 3rem;
+            text-align: center;
+            align-content: center;
+            margin: 0.5rem;
+            border: 0.5px solid black;
+            border-radius: 0.5rem;
+            " id="threeButton">3</button>
+
+            <button style="
+            width: 6rem;
+            height: 6rem;
+            font-size: 3rem;
+            text-align: center;
+            align-content: center;
+            margin: 0.5rem;
+            border: 0.5px solid black;
+            border-radius: 0.5rem;
+            " id="divideButton">/</button>
+
+            <button style="
+            width: 6rem;
+            height: 6rem;
+            font-size: 3rem;
+            text-align: center;
+            align-content: center;
+            margin: 0.5rem;
+            border: 0.5px solid black;
+            border-radius: 0.5rem;
+            " id="fourButton">4</button>
+
+            <button style="
+            width: 6rem;
+            height: 6rem;
+            font-size: 3rem;
+            text-align: center;
+            align-content: center;
+            margin: 0.5rem;
+            border: 0.5px solid black;
+            border-radius: 0.5rem;
+            " id="fiveButton">5</button>
+            <button style="
+            width: 6rem;
+            height: 6rem;
+            font-size: 3rem;
+            text-align: center;
+            align-content: center;
+            margin: 0.5rem;
+            border: 0.5px solid black;
+            border-radius: 0.5rem;
+            " id="sixButton">6</button>
+            <button style="
+            width: 6rem;
+            height: 6rem;
+            font-size: 3rem;
+            text-align: center;
+            align-content: center;
+            margin: 0.5rem;
+            border: 0.5px solid black;
+            border-radius: 0.5rem;
+            " id="multiplyButton">X</button>
+            <button style="
+            width: 6rem;
+            height: 6rem;
+            font-size: 3rem;
+            text-align: center;
+            align-content: center;
+            margin: 0.5rem;
+            border: 0.5px solid black;
+            border-radius: 0.5rem;
+            " id="sevenButton">7</button>
+            <button style="
+            width: 6rem;
+            height: 6rem;
+            font-size: 3rem;
+            text-align: center;
+            align-content: center;
+            margin: 0.5rem;
+            border: 0.5px solid black;
+            border-radius: 0.5rem;
+            " id="eightButton">8</button>
+            <button style="
+            width: 6rem;
+            height: 6rem;
+            font-size: 3rem;
+            text-align: center;
+            align-content: center;
+            margin: 0.5rem;
+            border: 0.5px solid black;
+            border-radius: 0.5rem;
+            " id="nineButton">9</button>
+            <button style="
+            width: 6rem;
+            height: 6rem;
+            font-size: 3rem;
+            text-align: center;
+            align-content: center;
+            margin: 0.5rem;
+            border: 0.5px solid black;
+            border-radius: 0.5rem;
+            " id="minusButton">-</button>
+            <button style="
+            width: 6rem;
+            height: 6rem;
+            font-size: 3rem;
+            text-align: center;
+            align-content: center;
+            margin: 0.5rem;
+            border: 0.5px solid black;
+            border-radius: 0.5rem;
+            " id="zeroButton">0</button>
+            <button style="
+            width: 6rem;
+            height: 6rem;
+            font-size: 3rem;
+            text-align: center;
+            align-content: center;
+            margin: 0.5rem;
+            border: 0.5px solid black;
+            border-radius: 0.5rem;
+            " id="dotButton">.</button>
+            <button style="
+            width: 6rem;
+            height: 6rem;
+            font-size: 3rem;
+            text-align: center;
+            align-content: center;
+            margin: 0.5rem;
+            border: 0.5px solid black;
+            border-radius: 0.5rem;
+            " id="equalButton">=</button>
+            <button style="
+            width: 6rem;
+            height: 6rem;
+            font-size: 3rem;
+            text-align: center;
+            align-content: center;
+            margin: 0.5rem;
+            border: 0.5px solid black;
+            border-radius: 0.5rem;
+            " id="plusButton">+</button>
+
+        </div>
+    </div>
+
+    <script>
+        const oneButton = document.getElementById("oneButton")
+        const twoButton = document.getElementById("twoButton")
+        const threeButton = document.getElementById("threeButton")
+        const fourButton = document.getElementById("fourButton")
+        const fiveButton = document.getElementById("fiveButton")
+        const sixButton = document.getElementById("sixButton")
+        const sevenButton = document.getElementById("sevenButton")
+        const eightButton = document.getElementById("eightButton")
+        const nineButton = document.getElementById("nineButton")
+        const zeroButton = document.getElementById("zeroButton")
+
+        const divideButton = document.getElementById("divideButton")
+        const multiplyButton = document.getElementById("multiplyButton")
+        const minusButton = document.getElementById("minusButton")
+        const plusButton = document.getElementById("plusButton")
+        const equalButton = document.getElementById("equalButton")
+        const dotButton = document.getElementById("dotButton")
+        const eraseButton = document.getElementById("eraseButton")
+
+        const resultElement = document.getElementById("result")
+        const topResultElement = document.getElementById("topResult")
+
+        let numberResult1 = ""
+        let numberResult2 = ""
+        let isNumber2 = false
+        let symbolOperation = 0
+        let isDelete = false
+
+        function addNumber(number) {
+            let numberDisplay = ""
+            if(isNumber2){
+                numberDisplay = numberResult2.toString() + number
+                numberResult2 = Number(numberDisplay)
+                console.log(numberResult2)
+                displayNumber(numberDisplay)
+            }else{
+                numberDisplay = numberResult1.toString() + number
+                numberResult1 = Number(numberDisplay)
+                console.log(numberResult1)
+                displayNumber(numberDisplay)
+            }
+        }
+
+        function displayNumber(number) {
+            //console.trace("display" + number)
+                resultElement.innerHTML = number
+        }
+
+        function symbolOperator(symbol) {
+            switch (symbol) {
+                case "/":
+                    topResultElement.innerHTML = numberResult1 + " / "
+                    symbolOperation = 1
+                    isNumber2 = true
+                    break;
+                case "*":
+                    topResultElement.innerHTML = numberResult1 + " X "
+                    symbolOperation = 2
+                    isNumber2 = true
+                    break;
+                case "-":
+                    topResultElement.innerHTML = numberResult1 + " - "
+                    symbolOperation = 3
+                    isNumber2 = true
+                    break;
+                case "+":
+                    topResultElement.innerHTML = numberResult1 + " + "
+                    symbolOperation = 4
+                    isNumber2 = true
+                    break;
+            }
+            resultElement.innerHTML = ""
+        }
+
+        function totalOperation() {
+            let resulty = 0
+            switch (symbolOperation) {
+                case 1:
+                    topResultElement.innerHTML = numberResult1 + " / " + numberResult2
+                    resulty = numberResult1 / numberResult2
+                    isNumber2 = false
+                    resultElement.innerHTML = "= " + resulty
+                    isDelete = true
+                    break;
+                case 2:
+                    topResultElement.innerHTML = numberResult1 + " X " + numberResult2
+                    resulty = numberResult1 * numberResult2
+                    isNumber2 = false
+                    resultElement.innerHTML = "= " + resulty
+                    isDelete = true
+                    break;
+                case 3:
+                    topResultElement.innerHTML = numberResult1 + " - " + numberResult2
+                    resulty = numberResult1 - numberResult2
+                    isNumber2 = false
+                    resultElement.innerHTML = "= " + resulty
+                    isDelete = true
+
+                    break;
+                case 4:
+                    topResultElement.innerHTML = numberResult1 + " + " + numberResult2
+                    resulty = numberResult1 + numberResult2
+                    isNumber2 = false
+                    resultElement.innerHTML = "= " + resulty
+                    isDelete = true
+                    break;
+                default:
+                    isDelete = true
+                    isNumber2 = false
+                    resultElement.innerHTML = "= " + numberResult1
+                    break;
+            }
+            numberResult2 = ""
+            numberResult1 = resulty
+        }
+        function deleteNumber() {
+            if (isNumber2) {
+                const stringNumber2 = numberResult2.toString()
+                const numberl2 = stringNumber2.length
+                const numbere2 = stringNumber2.substr(0,numberl2-1)
+                numberResult2 = Number(numbere2)
+                displayNumber(numbere2)
+                isDelete = false
+            } else {
+                const stringNumber1 = numberResult1.toString()
+                const numberl1 = stringNumber1.length
+                const numbere1 = stringNumber1.substr(0,numberl1-1)
+                numberResult1 = Number(numbere1)
+                if (isDelete) {
+                    numberResult1 = ""
+                    numberResult2 = ""
+                    topResultElement.innerText = ""
+                }
+                displayNumber(numberResult1)
+                isDelete = false
+            }
+            console.trace("who?")
+        }
+
+        zeroButton.addEventListener("click", ()=>{addNumber(0)})
+        oneButton.addEventListener("click", ()=>{addNumber(1)})
+        twoButton.addEventListener("click", ()=>{addNumber(2)})
+        threeButton.addEventListener("click", ()=>{addNumber(3)})
+        fourButton.addEventListener("click", ()=>{addNumber(4)})
+        fiveButton.addEventListener("click", ()=>{addNumber(5)})
+        sixButton.addEventListener("click", ()=>{addNumber(6)})
+        sevenButton.addEventListener("click", ()=>{addNumber(7)})
+        eightButton.addEventListener("click", ()=>{addNumber(8)})
+        nineButton.addEventListener("click", ()=>{addNumber(9)})
+
+        dotButton.addEventListener("click", ()=>{addNumber(".")})
+
+        divideButton.addEventListener("click", ()=>{symbolOperator("/")})
+        multiplyButton.addEventListener("click", ()=>{symbolOperator("*")})
+        minusButton.addEventListener("click", ()=>{symbolOperator("-")})
+        plusButton.addEventListener("click", ()=>{symbolOperator("+")})
+
+        equalButton.addEventListener("click", totalOperation)
+        eraseButton.addEventListener("click", deleteNumber)
+    </script>
+</body>
+
+</html>
