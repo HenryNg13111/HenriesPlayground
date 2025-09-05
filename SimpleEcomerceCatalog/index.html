@@ -16,14 +16,32 @@
         <li>
             <!--(Search Bar)-->
         </li>
-        <li id="logIn">
-            <div>Sign In</div>
-            <div>Log In</div>
+        <li id="LogIn">
+            <a href="/SimpleEcomerceCatalog/LogIn.html">
+                <div>
+                    Log In
+                </div>
+            </a>
         </li>
     </nav>
 
     <script>
+        const LogIn = document.getElementById("LogIn")
+        const navBar = document.getElementById("navBar")
+        const userInfo = sessionStorage.getItem("user")
         
+        if(userInfo != null){
+            LogIn.remove()
+
+            const listItem = document.createElement("li")
+            const division = document.createElement("div")
+
+            division.innerHTML = userInfo
+
+            listItem.appendChild(division)
+
+            navBar.appendChild(listItem)
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+</head>
+<body>
+        <a href="/SimpleEcomerceCatalog/index.html" id="client">
+            <div>
+                Client
+            </div>
+        </a>
+        <a href="">
+            <div>
+                Admin
+            </div>
+        </a>
+        <script>
+            const client = document.getElementById("client")
+            client.addEventListener("click",()=>{
+                sessionStorage.setItem("user","client")
+            })
+
+        </script>
+</body>
+</html>
