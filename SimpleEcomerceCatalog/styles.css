@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+Content (Primary) Color #21D1FD
+Action (Secondary) Color #60F000
+*/
+.navBar {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 0.25rem solid #24D1FD;
+    align-items: center;
+}
+
+#LogInButton, #SignInButton{
+    margin-right: 1rem;
+    padding: .5rem;
+    background-color: #24D1FD;
+    border: 0.1rem solid #24D1FD;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+#LogInButton:hover, #SignInButton:hover{
+    cursor: pointer;
+    background-color: #60F000;
+    border: 0.1rem solid #60F000;
+}
+#SignInButton:hover .SignInDropDown{display: block;}
+
+.SignInDropDown{
+    display: none;
+    position: absolute;
+    background-color: #60F000;
+    border: 0.1rem solid #60F000;
+    
+}

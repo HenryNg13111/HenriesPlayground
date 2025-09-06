@@ -1,47 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eCommerce</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <nav id="navBar">
-        <li>
-            <a href="/">
-                <img src="" alt="Logo">
-            </a>
-        </li>
-        <li>
-            <!--(Search Bar)-->
-        </li>
-        <li id="LogIn">
-            <a href="/SimpleEcomerceCatalog/LogIn.html">
-                <div>
-                    Log In
-                </div>
-            </a>
-        </li>
+    <nav class="navBar" id="navBar">
+        <a href="/">
+            <img src="./home.png" alt="Logo">
+        </a>
+
+        <!--(Search Bar)-->
+
+        <a href=".LogIn.html" id="LogInButton">
+            <div>
+                Log In
+            </div>
+        </a>
+
     </nav>
 
     <script>
-        const LogIn = document.getElementById("LogIn")
+        const LogIn = document.getElementById("LogInButton")
         const navBar = document.getElementById("navBar")
         const userInfo = sessionStorage.getItem("user")
-        
-        if(userInfo != null){
+
+        if (userInfo != null) {
             LogIn.remove()
 
-            const listItem = document.createElement("li")
+            const dropdownA = document.createElement("a")
+            const dropdownButton = document.createElement("div")
+            const dropdownDiv = document.createElement("div")
             const division = document.createElement("div")
 
+            dropdownA.href = "./client.html"
+            dropdownA.innerHTML = "Account"
+            dropdownA.className = "SignInDropDownItems"
+
+            dropdownButton.addEventListener("click",()=>{
+
+            })
+            dropdownButton.innerHTML = "Log Out"
+            dropdownButton.className = "DignInDropDownItems"
+
+            dropdownDiv.className = "SignInDropDown"
+            dropdownDiv.appendChild(dropdownA)
+            dropdownDiv.appendChild(dropdownButton)
+            
             division.innerHTML = userInfo
+            division.id = "SignInButton"        
+            division.appendChild(dropdownDiv)    
 
-            listItem.appendChild(division)
-
-            navBar.appendChild(listItem)
+            navBar.appendChild(division)
         }
     </script>
 </body>
+
 </html>

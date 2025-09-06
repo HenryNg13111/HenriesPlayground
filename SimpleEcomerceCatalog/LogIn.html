@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+    <nav>
         <a href="/SimpleEcomerceCatalog/index.html" id="client">
             <div>
                 Client
@@ -16,12 +20,16 @@
                 Admin
             </div>
         </a>
-        <script>
-            const client = document.getElementById("client")
-            client.addEventListener("click",()=>{
-                sessionStorage.setItem("user","client")
-            })
 
-        </script>
+    </nav>
+
+    <script>
+        const client = document.getElementById("client")
+        client.addEventListener("click", () => {
+            sessionStorage.setItem("user", "client")
+        })
+
+    </script>
 </body>
+
 </html>
