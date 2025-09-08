@@ -16,28 +16,67 @@ Action (Secondary) Color #60F000
     align-items: center;
 }
 
-#LogInButton, #SignInButton{
+#LogInButton {
     margin-right: 1rem;
     padding: .5rem;
     background-color: #24D1FD;
     border: 0.1rem solid #24D1FD;
-    border-radius: 0.5rem;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
     text-decoration: none;
     font-weight: bold;
     color: white;
 }
 
-#LogInButton:hover, #SignInButton:hover{
+#LogInButton:hover {
     cursor: pointer;
     background-color: #60F000;
     border: 0.1rem solid #60F000;
 }
-#SignInButton:hover .SignInDropDown{display: block;}
 
-.SignInDropDown{
+#DropDownLogInMenu {
+    width: 4rem;
+    padding: .5rem;
+    background-color: #24D1FD;
+    border: 0.1rem solid #24D1FD;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.DropDownLogInContent {
     display: none;
     position: absolute;
+    width: 4rem;
+    margin-top: 0.55rem;
+    background-color: #24D1FD;
+    border: 0.1rem solid #24D1FD;
+    border-radius: 0 0 0.5rem 0.5rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    translate: -0.55rem;
+}
+
+#DropDownLogInMenu:hover .DropDownLogInContent {
+    display: block;
+}
+
+#DropDownLogInMenu:hover {
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+.DropDownLogInItem{
+    color: white;
+    text-decoration: none;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.DropDownLogInItem:hover{
     background-color: #60F000;
     border: 0.1rem solid #60F000;
-    
+
+}
+#DropDownLogInButton:hover{
+    cursor: pointer;
 }

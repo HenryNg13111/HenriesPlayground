@@ -16,7 +16,7 @@
 
         <!--(Search Bar)-->
 
-        <a href=".LogIn.html" id="LogInButton">
+        <a href="./LogIn.html" id="LogInButton">
             <div>
                 Log In
             </div>
@@ -39,20 +39,21 @@
 
             dropdownA.href = "./client.html"
             dropdownA.innerHTML = "Account"
-            dropdownA.className = "SignInDropDownItems"
+            dropdownA.className = "DropDownLogInItem"
 
             dropdownButton.addEventListener("click",()=>{
 
             })
             dropdownButton.innerHTML = "Log Out"
-            dropdownButton.className = "DignInDropDownItems"
+            dropdownButton.className = "DropDownLogInItem"
+            dropdownButton.id = "DropDownLogInButton"
 
-            dropdownDiv.className = "SignInDropDown"
+            dropdownDiv.className = "DropDownLogInContent"
             dropdownDiv.appendChild(dropdownA)
             dropdownDiv.appendChild(dropdownButton)
             
             division.innerHTML = userInfo
-            division.id = "SignInButton"        
+            division.id = "DropDownLogInMenu"        
             division.appendChild(dropdownDiv)    
 
             navBar.appendChild(division)
