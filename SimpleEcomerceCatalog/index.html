@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eCommerce</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
     <nav class="navBar" id="navBar">
-        <a href="/">
+        <a href="./">
             <img src="./home.png" alt="Logo">
         </a>
 
@@ -23,8 +23,38 @@
         </a>
 
     </nav>
+    <div class="catalog">
 
+    </div>
+    <script id="jsonDB" type="application/json">
+        {
+            "database":[
+                {"productImageURL":"./sneaker.jpg",
+                "productTitle":"Shiny Sneaker",
+                "productPrice": "$3.00",
+                "Inventory": 100,
+                "productDescription": "White Sneaker that shines"},
+                {"productImageURL":"./sneaker.jpg",
+                "productTitle":"More Shiny Sneaker",
+                "productPrice": "$30.00",
+                "Inventory": 100,
+                "productDescription": "White Sneaker that shines more"},
+                {"productImageURL":"./sneaker.jpg",
+                "productTitle":"Most Shiny Sneaker",
+                "productPrice": "$300.00",
+                "Inventory": 1,
+                "productDescription": "Its very shiny"}
+            ]
+        }
+    </script>
     <script>
+        const databaseJson = document.getElementById("jsonDB")
+        const databaseParse = JSON.parse(databaseJson.textContent)
+        const database = databaseParse.database
+        for(const item of database){
+            console.log(item)
+        }
+
         const LogIn = document.getElementById("LogInButton")
         const navBar = document.getElementById("navBar")
         const userInfo = sessionStorage.getItem("user")
@@ -34,27 +64,27 @@
 
             const dropdownA = document.createElement("a")
             const dropdownButton = document.createElement("div")
-            const dropdownDiv = document.createElement("div")
             const division = document.createElement("div")
 
-            dropdownA.href = "./client.html"
+            /*dropdownA.href = "./client.html"
             dropdownA.innerHTML = "Account"
-            dropdownA.className = "DropDownLogInItem"
+            dropdownA.className = "DropDownLogInContent"*/
 
-            dropdownButton.addEventListener("click",()=>{
+            dropdownButton.addEventListener("click", () => {
 
             })
             dropdownButton.innerHTML = "Log Out"
-            dropdownButton.className = "DropDownLogInItem"
+            dropdownButton.className = "DropDownLogInContent"
             dropdownButton.id = "DropDownLogInButton"
+            dropdownButton.addEventListener("click", () => {
+                sessionStorage.removeItem("user")
+                window.location.reload()
+            })
 
-            dropdownDiv.className = "DropDownLogInContent"
-            dropdownDiv.appendChild(dropdownA)
-            dropdownDiv.appendChild(dropdownButton)
-            
             division.innerHTML = userInfo
-            division.id = "DropDownLogInMenu"        
-            division.appendChild(dropdownDiv)    
+            division.className = "DropDownLogInMenu"
+            /* division.appendChild(dropdownA)    */
+            division.appendChild(dropdownButton)
 
             navBar.appendChild(division)
         }

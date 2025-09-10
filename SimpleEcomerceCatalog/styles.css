@@ -33,50 +33,72 @@ Action (Secondary) Color #60F000
     border: 0.1rem solid #60F000;
 }
 
-#DropDownLogInMenu {
-    width: 4rem;
-    padding: .5rem;
-    background-color: #24D1FD;
-    border: 0.1rem solid #24D1FD;
-    border-radius: 0.5rem;
-    font-weight: bold;
-    color: white;
+.DropDownLogInMenu{
     text-align: center;
     position: relative;
+    margin-right: 3rem;
+    padding: 0.5rem;
+    min-width: 4rem;
+    background-color: #24D1FD;
+    color: white;
+    font-weight: bold;
+    border-radius: 1rem 1rem 1rem 1rem;
 }
-
-.DropDownLogInContent {
+.DropDownLogInContent{
+    cursor: pointer;
     display: none;
     position: absolute;
-    width: 4rem;
-    margin-top: 0.55rem;
     background-color: #24D1FD;
-    border: 0.1rem solid #24D1FD;
-    border-radius: 0 0 0.5rem 0.5rem;
-    font-weight: bold;
     color: white;
-    text-align: center;
-    translate: -0.55rem;
+    min-width: 4rem;
+    padding: 0.5rem;
+    translate: -0.5rem 0.5rem;
+    border-radius: 0 0 1rem 1rem;
 }
-
-#DropDownLogInMenu:hover .DropDownLogInContent {
+.DropDownLogInMenu:hover{
+    border-radius: 1rem 1rem 0 0;
+}
+.DropDownLogInMenu:hover .DropDownLogInContent{
     display: block;
 }
-
-#DropDownLogInMenu:hover {
-    border-radius: 0.5rem 0.5rem 0 0;
-}
-.DropDownLogInItem{
-    color: white;
-    text-decoration: none;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-.DropDownLogInItem:hover{
+.DropDownLogInContent:hover{
     background-color: #60F000;
-    border: 0.1rem solid #60F000;
-
+} 
+.AuthContainer{
+    border: #24D1FD solid 0.25rem;
+    justify-self: center;
+    padding: 4rem;
+    margin: 10rem;
+    max-width: 20rem;
+    display: grid;
+    justify-content: center;
+    border-radius: 2rem;
 }
-#DropDownLogInButton:hover{
+#client{
+    min-width: 10rem;
+    text-align: center;
+    margin: 2rem;
+    padding: 1rem;
+    background-color: #24D1FD;
+    text-decoration: none;
+    color: white;
+    border-radius: 1rem;
+}
+#client:hover{
+    background-color: #60F000;
+    cursor: pointer;
+}
+#Admin{
+    min-width: 10rem;
+    text-align: center;
+    margin: 2rem;
+    padding: 1rem;
+    background-color: #24D1FD;
+    text-decoration: none;
+    color: white;
+    border-radius: 1rem;
+}
+#Admin:hover{
+    background-color: #60F000;
     cursor: pointer;
 }
