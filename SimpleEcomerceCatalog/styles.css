@@ -102,3 +102,55 @@ Action (Secondary) Color #60F000
     background-color: #60F000;
     cursor: pointer;
 }
+#catalog{
+    display: grid;
+    max-width: 90rem;
+    grid-template-columns: 20rem 20rem 20rem;
+    justify-content: center;
+}
+.productHold{
+    padding: 1rem;
+    margin: 3rem;
+    max-width: 12rem;
+    border: #24D1FD solid 0.25rem;
+    border-radius: 2rem;
+}
+.productImage{
+    padding: 1rem;
+    max-width: 10rem;
+}
+.productTitle{
+    padding: 0.25rem;
+    font-weight: bold;
+    font-size: larger;
+    height: 2rem;
+}
+.productDesc{
+    padding: 0.25rem;
+    height: 3rem;
+}
+.productBuySection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.productPrice{
+    color: darkgreen;
+    font-size: 1.25rem;
+    font-weight: bolder;
+}
+.productBuyButton{
+    background-color: #24D1FD;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+.productBuyButton:hover{
+    background-color: #60F000;
+}
+.productInv{
+    font-style: italic;
+    color: grey;
+}

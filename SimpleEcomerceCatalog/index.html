@@ -23,7 +23,7 @@
         </a>
 
     </nav>
-    <div class="catalog">
+    <div id="catalog">
 
     </div>
     <script id="jsonDB" type="application/json">
@@ -33,17 +33,20 @@
                 "productTitle":"Shiny Sneaker",
                 "productPrice": "$3.00",
                 "Inventory": 100,
-                "productDescription": "White Sneaker that shines"},
+                "productDescription": "White Sneaker that shines",
+                "id":1},
                 {"productImageURL":"./sneaker.jpg",
                 "productTitle":"More Shiny Sneaker",
                 "productPrice": "$30.00",
                 "Inventory": 100,
-                "productDescription": "White Sneaker that shines more"},
+                "productDescription": "White Sneaker that shines more",
+                "id":2},
                 {"productImageURL":"./sneaker.jpg",
                 "productTitle":"Most Shiny Sneaker",
                 "productPrice": "$300.00",
                 "Inventory": 1,
-                "productDescription": "Its very shiny"}
+                "productDescription": "Its very shiny",
+                "id":3}
             ]
         }
     </script>
@@ -51,8 +54,54 @@
         const databaseJson = document.getElementById("jsonDB")
         const databaseParse = JSON.parse(databaseJson.textContent)
         const database = databaseParse.database
+        
+        const catalog = document.getElementById("catalog")
+
         for(const item of database){
-            console.log(item)
+            const div = document.createElement("div")
+            const image = document.createElement("img")
+            const title = document.createElement("h4")
+            const desc = document.createElement("p")
+            const inv = document.createElement("div")
+            const price = document.createElement("div")
+            const buyButton = document.createElement("a")
+            //const addCartButton = document.createElement("button")
+
+            image.src = item.productImageURL
+            image.alt = "Product Image"
+            image.className = "productImage"
+
+            title.innerHTML = item.productTitle
+            title.className = "productTitle"
+
+            desc.innerHTML = item.productDescription
+            desc.className = "productDesc"
+
+            inv.innerHTML = item.Inventory + " Available"
+            inv.className = "productInv" 
+        
+            price.innerHTML = item.productPrice
+            price.className = "productPrice"
+
+            //TODO Add Cart Functions
+
+            buyButton.href = "./Product/"+item.id
+            buyButton.innerHTML = "Buy Now!"
+            buyButton.className = "productBuyButton"
+
+            const divy = document.createElement("div")
+            divy.className = "productBuySection"
+            divy.appendChild(price)
+            divy.appendChild(buyButton)
+
+            div.appendChild(image)
+            div.appendChild(title)
+            div.appendChild(desc)
+            div.appendChild(divy)
+            div.appendChild(inv)
+            div.className = "productHold"
+
+            catalog.appendChild(div)
         }
 
         const LogIn = document.getElementById("LogInButton")
