@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="all">
     <div class="slideContainer">
         <div class="slide fade">
             <img src="Untitled1.png" alt="First Landscape" style="width: 100%;">
@@ -19,13 +19,13 @@
             <img src="Untitled3.png" alt="Third Landscape" style="width: 100%;">
         </div>
 
-        <a class="prev" onclick="moveSlide(-1)">←</a>
-        <a class="next" onclick="moveSlide(1)">→</a>
+        <a class="prev" id="moveSlidePrev">←</a>
+        <a class="next" id="moveSlideNext">→</a>
     </div>
     <div class="dotContainer">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" id="currentOne"></span>
+        <span class="dot" id="currentTwo"></span>
+        <span class="dot" id="currentThree"></span>
     </div>
 </body>
 <script type="module" src="script.js"></script>
